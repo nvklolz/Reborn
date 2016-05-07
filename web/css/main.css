@@ -12,6 +12,7 @@ header h1 {
     text-align: center;
     color: #ffffff;
     line-height:200px;
+    font-size: 40px;
 }
 .banner {
     background: url('../images/homepage/lk.jpg') 0 0;
@@ -23,7 +24,9 @@ header h1 {
     padding:25px;
 }
 .banner h2 {
-    color: #ffffff
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 30px;
 }
 #content {
     width: 1100px;
@@ -32,6 +35,58 @@ header h1 {
     opacity: 0.9;
     margin:auto;
 }
+.content-separator-title {
+    height:40px;
+    width: 100%;
+    background-color: #242424;
+    color: #ffffff;
+    padding:0 25px;
+}
+.content-separator-title p {
+    line-height: 40px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right
+}
+.section {
+    width:800px;
+    height:187px;
+    margin:15px 0 15px 25px;
+    clear: both;
+}
+.section.secondary-news {
+    height:80px;
+}
+.img-news {
+    width:388px;
+    display: inline-block;
+}
+.content-text-news {
+    width:45%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+}
+.article-secondary {
+    width: 350px;
+    height: 80px;
+    border-left: 3px solid #D8D8DB;
+    padding-left: 15px;
+    color: #ffffff;
+}
+.article-secondary p {
+    margin-top: 15px;
+}
+.w800 {
+    width:800px;
+    margin-left:25px;
+}
+
+
+
 
 
 
