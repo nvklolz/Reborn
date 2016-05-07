@@ -84,7 +84,16 @@ header h1 {
     width:800px;
     margin-left:25px;
 }
-
+.section-primary-left {
+    width:825px;
+    display: inline-block;
+}
+.section-primary-right {
+    width: 275px;
+    background-color: #477CB0;
+    height: 300px;
+    float: right;
+}
 
 
 
