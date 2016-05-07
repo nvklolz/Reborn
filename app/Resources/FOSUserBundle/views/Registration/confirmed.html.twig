@@ -3,8 +3,21 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
+    <div class="container-fluid">
+        <section class="container">
+            <div class="container-page">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Votre inscription est validé.
+                    </h1>
+                </div>
+                <div class="col-md-12">
+                    <br />
+                    <h3>Vous pouvez maintenant avoir accès à votre profil et au forum !</h3>
+                    <br>
+                    <hr>
+                    Pour vos questions ou des réclamations, contactez nous à cette adresse : <strong>contact@nvkdesign.fr</strong>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock fos_user_content %}
