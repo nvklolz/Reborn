@@ -8,8 +8,8 @@
     <meta name="author" content="">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     {% endblock %}
@@ -37,7 +37,7 @@
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <a id="login" class="btn btn-default btn-outline btn-circle collapsed" href="{{ path('fos_user_profile_show') }}"> {{ app.user.username }}</a>
                         {% else %}
-                            <a href="{{ path('fos_user_security_login') }}" class="btn btn-default btn-outline btn-circle collapsed">log in</a>
+                            <a href="{{ path('fos_user_security_login') }}" class="btn btn-default btn-outline btn-circle collapsed">Inscription</a>
                         {% endif %}
                     </li>
                 </ul>
