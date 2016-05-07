@@ -1,5 +1,4 @@
 body {
-    background: url('../images/homepage/background.jpg') no-repeat top center #151b2e;
     font-family: 'Open Sans' , sans-serif;
     color: #798896;
 }
@@ -11,6 +10,13 @@ header {
 header img {
     display: block;
     margin: auto;
+}
+.navbar-brand>img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 11px;
+    left: 30px;
 }
 .banner {
     background: url('../images/homepage/lk.jpg') 0 0;

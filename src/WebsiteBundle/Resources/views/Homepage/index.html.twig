@@ -1,4 +1,12 @@
 {% extends 'base.html.twig' %}
+    {% block stylesheets %}
+        {{ parent() }}
+        <style type="text/css">
+            body {
+                background: url('../images/homepage/background.jpg') no-repeat top center #151b2e;
+            }
+        </style>
+    {% endblock %}
 {% block body %}
     <header>
         <img src="{{ asset('images/homepage/test.png') }}" alt="">
