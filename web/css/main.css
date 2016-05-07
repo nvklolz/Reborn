@@ -8,11 +8,9 @@ header {
     width:1100px;
     margin:auto;
 }
-header h1 {
-    text-align: center;
-    color: #ffffff;
-    line-height:200px;
-    font-size: 40px;
+header img {
+    display: block;
+    margin: auto;
 }
 .banner {
     background: url('../images/homepage/lk.jpg') 0 0;
@@ -81,7 +79,7 @@ header h1 {
     margin-top: 15px;
 }
 .w800 {
-    width:800px;
+    width:785px;
     margin-left:25px;
 }
 .section-primary-left {
@@ -93,6 +91,21 @@ header h1 {
     background-color: #477CB0;
     height: 300px;
     float: right;
+    padding:35px 20px;
+}
+.section-primary-recrutement td {
+    margin-bottom:10px;
+}
+.class img {
+    vertical-align: middle;
+}
+.class span {
+    color: #ffffff;
+    font-size:12px;
+}
+.speciality {
+    text-align: right;
+    vertical-align: middle;
 }
 
 
