@@ -2,10 +2,6 @@ website_index:
     path:    /
     defaults: { _controller: WebsiteBundle:Index:index }
 
-website_login:
-    path:    /login
-    defaults: { _controller: WebsiteBundle:Login:login }
-
 website_signup:
     path:    /signup
     defaults: { _controller: WebsiteBundle:Signup:signup }
