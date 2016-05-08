@@ -1,8 +1,19 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
-    </div>
+<div class="form-group col-lg-12">
+    {{ form_label(form.email, "Nouvelle adresse mail") }}
+    {{ form_widget(form.email,{ 'attr': {'class': 'form-control'} }) }}
+</div>
+<hr>
+<div class="form-group col-lg-12">
+    {{ form_label(form.current_password, "Mot de passe actuel") }}
+    {{ form_widget(form.current_password,{ 'attr': {'class': 'form-control'} }) }}
+</div>
+<div class="form-group col-lg-12">
+    <input type="submit" class="btn btn-success" value="Mettre à jour" />
+</div>
+<div class="col-md-6">
+    <a href="{{ path('fos_user_profile_show') }}"><p>Retour au profile</p></a>
+</div>
 {{ form_end(form) }}
