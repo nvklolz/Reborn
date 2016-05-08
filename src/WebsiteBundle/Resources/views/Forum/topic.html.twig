@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+ {% block stylesheets %}
+     {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
+     <style type="text/css">
+         body {
+             background: url('../images/homepage/background.jpg') no-repeat top center #151b2e;
+             color: #798896;
+         }
+     </style>
+ {% endblock %}
+{% block body %}
+    <header>
+        <img src="{{ asset('images/homepage/test.png') }}" alt="">
+    </header>
+    <div id="content">
+        <div class="content-separator-title">
+            <p>
+                Forum Index
+            </p>
+        </div>
+        <div class="section-forum">
+            <div class="forum-category">
+                <p>
+                    {{ headTopic.titre}}
+                </p>
+            </div>
+            {% for topic in topics %}
+                <div class="row-category">
+                    <div class="row-category-title">
+                        {{ topic.titre }}
+                        <div><small>{{ topic.alttitre }}</small></div>
+                    </div>
+                    <div class="row-category-topics">
+                        <div>
+                            <span>10</span><br>
+                            <small>Topics</small>
+                        </div>
+                    </div>
+                    <div class="row-category-posts">
+                        <div>
+                            <span>74</span><br>
+                            <small>Posts</small>
+                        </div>
+                    </div>
+                    <div class="row-category-lastpost">
+                        Re: Welcome aboard
+                        <div><small>By nvk 15 hours ago</small></div>
+                    </div>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+    </footer>
+{% endblock %}

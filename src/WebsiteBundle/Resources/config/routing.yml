@@ -9,3 +9,7 @@ website_signup:
 website_forum:
     path:    /forum
     defaults: { _controller: WebsiteBundle:Forum:forum }
+
+website_topic:
+    path:    /forum/{id}
+    defaults: { _controller: WebsiteBundle:Topic:topic }
