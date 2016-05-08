@@ -5,3 +5,7 @@ website_index:
 website_signup:
     path:    /signup
     defaults: { _controller: WebsiteBundle:Signup:signup }
+
+website_forum:
+    path:    /forum
+    defaults: { _controller: WebsiteBundle:Forum:forum }
