@@ -19,10 +19,13 @@
                 Forum Index
             </p>
         </div>
+        <div class="add-new-topic">
+            <a href="{{ path('website_topic_add') }}"><p>+ Nouveau Sujet</p></a>
+        </div>
         <div class="section-forum">
             <div class="forum-category">
                 <p>
-                    {{ headTopic.titre}}
+                    Sujets
                 </p>
             </div>
             {% for topic in topics %}
@@ -45,7 +48,7 @@
                     </div>
                     <div class="row-category-lastpost">
                         Re: Welcome aboard
-                        <div><small>By nvk 15 hours ago</small></div>
+                        <div><small>By nvk - {{ topic.createdat|date('m/d/Y') }}</small></div>
                     </div>
                     <hr>
                 </div>

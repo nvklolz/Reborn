@@ -43,3 +43,19 @@
     display: inline-block;
     text-align: right;
 }
+.add-new-topic {
+    background-color: #599877;
+    width: 160px;
+    border-radius: 0 4px 4px 0;
+    margin: 30px 0 10px 0;
+    color: #ffffff;
+    padding-left: 25px;
+}
+.add-new-topic p {
+    line-height: 35px;
+}
+.head-titre-add-sujet {
+    margin: 30px 0 10px 25px;
+    color: #000000;
+    font-size: 25px;
+}

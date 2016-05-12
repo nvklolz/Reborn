@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+ {% block stylesheets %}
+     {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
+     <style type="text/css">
+         body {
+             background: url('../images/homepage/background.jpg') no-repeat top center #151b2e;
+             color: #798896;
+         }
+     </style>
+ {% endblock %}
+{% block body %}
+    <header>
+        <img src="{{ asset('images/homepage/test.png') }}" alt="">
+    </header>
+    <div id="content">
+        <div class="content-separator-title">
+            <p>
+                Forum Index
+            </p>
+        </div>
+        <h4 class="head-titre-add-sujet">Recrutement</h4>
+        <div class="section-forum">
+            <div class="forum-category">
+                <p>
+                    Post a new sujet
+                </p>
+            </div>
+        </div>
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+            <div class="form-group col-lg-12">
+                {{ form_errors(form.titre) }}
+                {{ form_label(form.titre, "Titre") }}
+                {{ form_widget(form.titre, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group col-lg-12">
+                {{ form_errors(form.alttitre) }}
+                {{ form_label(form.alttitre, "Sous-titre ") }}
+                {{ form_widget(form.alttitre, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group col-lg-12">
+                {{ form_errors(form.content) }}
+                {{ form_label(form.content, "Votre message") }}
+                {{ form_widget(form.content, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        {{ form_end(form) }}
+    </div>
+    <footer>
+    </footer>
+{% endblock %}
