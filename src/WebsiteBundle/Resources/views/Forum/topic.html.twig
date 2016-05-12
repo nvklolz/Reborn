@@ -14,12 +14,12 @@
         <img src="{{ asset('images/homepage/test.png') }}" alt="">
     </header>
     <div id="content">
-        <div class="content-separator-title">
+        <div class="content-separator-title white-link">
             <p>
-                Forum Index
+                <a href="{{ path('website_forum') }}">Forum Index</a>
             </p>
         </div>
-        <div class="add-new-topic">
+        <div class="add-new-topic white-link">
             <a href="{{ path('website_topic_add') }}"><p>+ Nouveau Sujet</p></a>
         </div>
         <div class="section-forum">
@@ -31,8 +31,12 @@
             {% for topic in topics %}
                 <div class="row-category">
                     <div class="row-category-title">
+                        <a href=" {{ path('website_view_topic', {'id' : topic.id})  }}">
                         {{ topic.titre }}
-                        <div><small>{{ topic.alttitre }}</small></div>
+                            <div>
+                                <small>{{ topic.alttitre }}</small>
+                            </div>
+                        </a>
                     </div>
                     <div class="row-category-topics">
                         <div>

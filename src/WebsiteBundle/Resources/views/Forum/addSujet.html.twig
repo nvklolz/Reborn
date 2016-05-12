@@ -30,22 +30,27 @@
         </div>
         {{ form_start(form) }}
         {{ form_errors(form) }}
-            <div class="form-group col-lg-12">
+        <div class="col-lg-7 col-new-sujet">
+            <div class="form-group">
                 {{ form_errors(form.titre) }}
                 {{ form_label(form.titre, "Titre") }}
                 {{ form_widget(form.titre, { 'attr': {'class': 'form-control'} }) }}
             </div>
-            <div class="form-group col-lg-12">
+            <div class="form-group">
                 {{ form_errors(form.alttitre) }}
                 {{ form_label(form.alttitre, "Sous-titre ") }}
                 {{ form_widget(form.alttitre, { 'attr': {'class': 'form-control'} }) }}
             </div>
-            <div class="form-group col-lg-12">
+            <div class="form-group">
                 {{ form_errors(form.content) }}
                 {{ form_label(form.content, "Votre message") }}
                 {{ form_widget(form.content, { 'attr': {'class': 'form-control'} }) }}
             </div>
-        {{ form_end(form) }}
+            <div class="form-group">
+                {{ form_widget(form.valider, { 'attr': {'class': 'btn btn-success'} }) }}
+            </div>
+            {{ form_end(form) }}
+        </div>
     </div>
     <footer>
     </footer>
