@@ -43,3 +43,54 @@
     display: inline-block;
     text-align: right;
 }
+.add-new-topic {
+    background-color: #599877;
+    width: 160px;
+    border-radius: 0 4px 4px 0;
+    margin: 30px 0 10px 0;
+    color: #ffffff;
+    padding-left: 25px;
+}
+.add-new-topic p {
+    line-height: 35px;
+}
+.head-titre-add-sujet {
+    margin: 30px 0 30px 25px;
+    color: #000000;
+    font-size: 25px;
+}
+.col-new-sujet {
+    margin: 30px 0 0 10px;
+}
+.white-link a {
+    color: #ffffff;
+}
+.border-content-sujet {
+    border: 1px solid #dcdcdc;
+    min-height: 300px;
+}
+.head-content-sujet {
+    margin-top: 20px;
+    color: #969696;
+    font-size: 12px;
+}
+.col-left-content-sujet {
+    text-align: center;
+}
+.col-left-content-sujet:after {
+    content: '';
+    width: 1px;
+    height:180px;
+    background-color: #dcdcdc;
+    position: absolute;
+    top: 22px;
+    right: 0px;
+}
+.avatar-sujet {
+    width:124px;
+    height: 124px;
+    margin:20px auto;
+}
+.col-left-content-sujet small {
+    color: #969696;
+}

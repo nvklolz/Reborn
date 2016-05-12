@@ -13,3 +13,11 @@ website_forum:
 website_topic:
     path:    /forum/{id}
     defaults: { _controller: WebsiteBundle:Topic:topic }
+
+website_topic_add:
+    path:    /forum/add/sujet
+    defaults: { _controller: WebsiteBundle:Addsujet:addsujet }
+
+website_view_topic:
+    path:    /forum/sujet/{id}
+    defaults: { _controller: WebsiteBundle:Viewsujet:viewsujet }

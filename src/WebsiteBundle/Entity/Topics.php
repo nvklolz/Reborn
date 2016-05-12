@@ -42,6 +42,11 @@ class Topics
      */
     private $createdAt;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
     /**
      * @var string
      *

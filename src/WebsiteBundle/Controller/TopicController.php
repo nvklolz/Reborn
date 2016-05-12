@@ -15,12 +15,9 @@ class TopicController extends Controller
         $headTopic = $this->getDoctrine()
                 ->getRepository('WebsiteBundle:HeadTopic')
                 ->find($id);
-
         $topics = $this->getDoctrine()
             ->getRepository('WebsiteBundle:Topics')
             ->findAll();
-
-
         return $this->render('WebsiteBundle:Forum:topic.html.twig',
             array('topics' => $topics,
                   'headTopic' => $headTopic
