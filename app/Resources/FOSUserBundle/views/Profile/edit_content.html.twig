@@ -1,6 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+{{ form_errors(form) }}
 <div class="form-group col-lg-12">
     {{ form_label(form.email, "Nouvelle adresse mail") }}
     {{ form_widget(form.email,{ 'attr': {'class': 'form-control'} }) }}

@@ -29,7 +29,9 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "symfony/assetic-bundle": "^2.8",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "vich/uploader-bundle": "^1.0"
+        "vich/uploader-bundle": "^1.0",
+        "liip/imagine-bundle": "^1.5",
+        "gregwar/image-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
