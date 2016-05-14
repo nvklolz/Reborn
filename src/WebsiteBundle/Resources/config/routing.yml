@@ -18,6 +18,10 @@ website_topic_add:
     path:    /forum/add/sujet
     defaults: { _controller: WebsiteBundle:Addsujet:addsujet }
 
+website_reply_add:
+    path:    /forum/sujet/{id}/add/reply
+    defaults: { _controller: WebsiteBundle:Addreply:addreply }
+
 website_view_topic:
     path:    /forum/sujet/{id}
     defaults: { _controller: WebsiteBundle:Viewsujet:viewsujet }

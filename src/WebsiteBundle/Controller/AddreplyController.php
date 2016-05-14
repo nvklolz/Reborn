@@ -3,23 +3,24 @@
 namespace WebsiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use WebsiteBundle\Form\Type\FormTopic;
-use WebsiteBundle\Entity\Topics;
 use Symfony\Component\HttpFoundation\Request;
+use WebsiteBundle\Form\Type\FormReply;
+use WebsiteBundle\Entity\Reply;
 
-class AddsujetController extends Controller
+class AddreplyController extends Controller
 {
-    public function addsujetAction(Request $request)
+
+    public function addreplyAction(Request $request)
     {
-        $newTopic = new Topics();
-        $form = $this->createForm(FormTopic::class, $newTopic);
+        $newReply = new Reply();
+        $form = $this->createForm(FormReply::class, $newReply);
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($newTopic);
+            $em->persist($newReply);
             $em->flush();
         }
         return $this->render(
-            'WebsiteBundle:Forum:addsujet.html.twig',
+            'WebsiteBundle:Forum:addreply.html.twig',
             array(
                 'form' => $form->createView(),
             )
