@@ -15,9 +15,10 @@
     </header>
     <div id="content">
         <div class="content-separator-title white-link">
-            <p>
-                <a href="{{ path('website_forum') }}">Forum Index</a>
-            </p>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('website_forum') }}">Forum Index</a></li>
+                <li class="active">{{ headTopic.titre}}</li>
+            </ol>
         </div>
         <div class="add-new-topic white-link">
             <a href="{{ path('website_topic_add') }}"><p>+ Nouveau Sujet</p></a>

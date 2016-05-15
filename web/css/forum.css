@@ -95,3 +95,10 @@
 .col-left-content-sujet small {
     color: #969696;
 }
+.breadcrumb {
+    font-size: 11px;
+    padding:12px 3px;
+    margin-bottom: 0;
+    background-color: inherit;
+    border-radius: 0;
+}

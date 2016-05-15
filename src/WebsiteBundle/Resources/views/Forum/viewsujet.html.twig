@@ -17,9 +17,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="content-separator-title">
-                    <p>
-                        Forum Index
-                    </p>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('website_forum') }}">Forum Index</a></li>
+                        <li><a href="{{ path('website_topic', { 'id' : headTopic.id }) }}">{{ headTopic.titre}}</a></li>
+                        <li><a href=""></a>{{ sujet.titre}}</li>
+                    </ol>
                 </div>
                 <h4 class="head-titre-add-sujet">{{ sujet.titre }}</h4>
                 <div class="add-new-topic white-link">

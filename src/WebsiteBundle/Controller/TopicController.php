@@ -15,6 +15,7 @@ class TopicController extends Controller
         $headTopic = $this->getDoctrine()
                 ->getRepository('WebsiteBundle:HeadTopic')
                 ->find($id);
+        dump($headTopic);
         $topics = $this->getDoctrine()
             ->getRepository('WebsiteBundle:Topics')
             ->findAll();
