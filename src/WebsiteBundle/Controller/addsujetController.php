@@ -9,9 +9,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 class AddsujetController extends Controller
 {
-    public function addsujetAction(Request $request)
+    public function addsujetAction($id, Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $headTopic = $em->getRepository('WebsiteBundle:HeadTopic')->find($id);
+        dump($headTopic);
         $newTopic = new Topics();
+        $newTopic->setHeadTopicLink($headTopic);
         $form = $this->createForm(FormTopic::class, $newTopic);
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();

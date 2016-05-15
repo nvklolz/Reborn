@@ -21,7 +21,7 @@
             </ol>
         </div>
         <div class="add-new-topic white-link">
-            <a href="{{ path('website_topic_add') }}"><p>+ Nouveau Sujet</p></a>
+            <a href="{{ path('website_topic_add', {'id' : headTopic.id }) }}"><p>+ Nouveau Sujet</p></a>
         </div>
         <div class="section-forum">
             <div class="forum-category">
@@ -41,13 +41,13 @@
                     </div>
                     <div class="row-category-posts">
                         <div>
-                            <span>{{ topic.nbReply }}</span><br>
+                            <span>{{ topic.nbReply|default(0) }}</span><br>
                             <small>Posts</small>
                         </div>
                     </div>
                     <div class="row-category-lastpost">
                         Re: Welcome aboard
-                        <div><small>By nvk - {{ topic.createdat|date('m/d/Y') }}</small></div>
+                        <div><small>By {{ app.user.userName }} - {{ topic.createdat|date('m/d/Y') }}</small></div>
                     </div>
                     <hr>
                 </div>

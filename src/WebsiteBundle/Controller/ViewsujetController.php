@@ -28,7 +28,7 @@ class ViewsujetController extends Controller
             array('sujet' => $sujet,
                   'reply' => $reply,
                   'headTopic' => $headTopic,
-                  'Topic' => $topic
+                  'topic' => $topic
                 ));
     }
 }

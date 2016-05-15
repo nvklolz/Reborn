@@ -52,9 +52,16 @@ class Topics
     /**
      * @var integer
      *
-     * @ORM\Column(name="nbreply", type="integer")
+     * @ORM\Column(name="nbreply", type="integer", nullable=true)
      */
     private $nbReply;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\HeadTopic", inversedBy="TopicsLink")
+     * @ORM\JoinColumn(name="id_head_topic", referencedColumnName="id")
+     */
+    private $headTopicLink;
+
 
     public function __construct()
     {
@@ -208,5 +215,53 @@ class Topics
     public function getReply()
     {
         return $this->reply;
+    }
+
+    /**
+     * Set nbReply
+     *
+     * @param integer $nbReply
+     *
+     * @return Topics
+     */
+    public function setNbReply($nbReply)
+    {
+        $this->nbReply = $nbReply;
+
+        return $this;
+    }
+
+    /**
+     * Get nbReply
+     *
+     * @return integer
+     */
+    public function getNbReply()
+    {
+        return $this->nbReply;
+    }
+
+    /**
+     * Set retachedHeadTopic
+     *
+     * @param \WebsiteBundle\Entity\HeadTopic $retachedHeadTopic
+     *
+     * @return Topics
+     */
+    public function setRetachedHeadTopic(\WebsiteBundle\Entity\HeadTopic $retachedHeadTopic = null)
+    {
+        $this->retachedHeadTopic = $retachedHeadTopic;
+
+        return $this;
+    }
+
+    /**
+     * Get retachedHeadTopic
+     *
+     * @return \WebsiteBundle\Entity\HeadTopic
+     */
+    public function getRetachedHeadTopic()
+    {
+        return $this->retachedHeadTopic;
     }
 }

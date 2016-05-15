@@ -139,38 +139,4 @@ class HeadTopic
     {
         return $this->ratachedTopics;
     }
-
-    /**
-     * Add topicsLink
-     *
-     * @param \WebsiteBundle\Entity\Topics $topicsLink
-     *
-     * @return HeadTopic
-     */
-    public function addTopicsLink(\WebsiteBundle\Entity\Topics $topicsLink)
-    {
-        $this->topicsLink[] = $topicsLink;
-
-        return $this;
-    }
-
-    /**
-     * Remove topicsLink
-     *
-     * @param \WebsiteBundle\Entity\Topics $topicsLink
-     */
-    public function removeTopicsLink(\WebsiteBundle\Entity\Topics $topicsLink)
-    {
-        $this->topicsLink->removeElement($topicsLink);
-    }
-
-    /**
-     * Get topicsLink
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTopicsLink()
-    {
-        return $this->topicsLink;
-    }
 }

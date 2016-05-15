@@ -15,7 +15,7 @@ website_topic:
     defaults: { _controller: WebsiteBundle:Topic:topic }
 
 website_topic_add:
-    path:    /forum/add/sujet
+    path:    /forum/{id}/add/sujet
     defaults: { _controller: WebsiteBundle:Addsujet:addsujet }
 
 website_reply_add:

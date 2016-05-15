@@ -19,7 +19,7 @@
                 <div class="content-separator-title">
                     <ol class="breadcrumb">
                         <li><a href="{{ path('website_forum') }}">Forum Index</a></li>
-                        <li><a href="{{ path('website_topic', { 'id' : headTopic.id }) }}">{{ headTopic.titre}}</a></li>
+                        <li><a href="{{ path('website_topic', { 'id' : topic.headtopiclink.id }) }}">{{ topic.headtopiclink.titre }}</a></li>
                         <li><a href=""></a>{{ sujet.titre}}</li>
                     </ol>
                 </div>

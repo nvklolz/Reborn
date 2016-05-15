@@ -52,9 +52,16 @@ class Topics
     /**
      * @var integer
      *
-     * @ORM\Column(name="nbreply", type="integer")
+     * @ORM\Column(name="nbreply", type="integer", nullable=true)
      */
     private $nbReply;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\HeadTopic", inversedBy="topicsLink")
+     * @ORM\JoinColumn(name="id_head_topic", referencedColumnName="id")
+     */
+    private $headTopicLink;
+
 
     public function __construct()
     {
@@ -232,5 +239,53 @@ class Topics
     public function getNbReply()
     {
         return $this->nbReply;
+    }
+
+    /**
+     * Set retachedHeadTopic
+     *
+     * @param \WebsiteBundle\Entity\HeadTopic $retachedHeadTopic
+     *
+     * @return Topics
+     */
+    public function setRetachedHeadTopic(\WebsiteBundle\Entity\HeadTopic $retachedHeadTopic = null)
+    {
+        $this->retachedHeadTopic = $retachedHeadTopic;
+
+        return $this;
+    }
+
+    /**
+     * Get retachedHeadTopic
+     *
+     * @return \WebsiteBundle\Entity\HeadTopic
+     */
+    public function getRetachedHeadTopic()
+    {
+        return $this->retachedHeadTopic;
+    }
+
+    /**
+     * Set headTopicLink
+     *
+     * @param \WebsiteBundle\Entity\HeadTopic $headTopicLink
+     *
+     * @return Topics
+     */
+    public function setHeadTopicLink(\WebsiteBundle\Entity\HeadTopic $headTopicLink = null)
+    {
+        $this->headTopicLink = $headTopicLink;
+
+        return $this;
+    }
+
+    /**
+     * Get headTopicLink
+     *
+     * @return \WebsiteBundle\Entity\HeadTopic
+     */
+    public function getHeadTopicLink()
+    {
+        return $this->headTopicLink;
     }
 }
