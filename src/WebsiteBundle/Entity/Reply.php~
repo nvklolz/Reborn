@@ -36,12 +36,10 @@ class Reply
     private $postedAt;
 
     /**
-     * @var string
-     * @ORM\OneToMany(targetEntity="WebsiteBundle\Entity\User", mappedBy="reply")
-     *
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\Topics", inversedBy="reply")
+     * @ORM\JoinColumn(name="id_topic", referencedColumnName="titre")
      */
-    private $userName;
-
+    private $sujet;
 
     /**
      * Get id
@@ -102,26 +100,35 @@ class Reply
     }
 
     /**
-     * Set userName
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->postedAt = new \DateTime();
+    }
+
+
+    /**
+     * Set sujet
      *
-     * @param string $userName
+     * @param \WebsiteBundle\Entity\Topics $sujet
      *
      * @return Reply
      */
-    public function setUserName($userName)
+    public function setSujet(\WebsiteBundle\Entity\Topics $sujet)
     {
-        $this->userName = $userName;
+        $this->sujet = $sujet;
 
         return $this;
     }
 
     /**
-     * Get userName
+     * Get sujet
      *
-     * @return string
+     * @return \WebsiteBundle\Entity\Topics
      */
-    public function getUserName()
+    public function getSujet()
     {
-        return $this->userName;
+        return $this->sujet;
     }
 }

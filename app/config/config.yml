@@ -90,6 +90,7 @@ twig:
         resources: ['bootstrap_3_layout.html.twig']
     form_themes:
         - 'VichUploaderBundle:Form:fields.html.twig'
+
 vich_uploader:
     db_driver: orm # or mongodb or propel or phpcr
     mappings:
@@ -102,3 +103,9 @@ vich_uploader:
 
 gregwar_image:
     cache_dir: images/products/cache
+
+services:
+  twig.extension.text:
+       class: Twig_Extensions_Extension_Date
+       tags:
+           - { name: twig.extension }

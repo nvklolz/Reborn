@@ -3,6 +3,7 @@
 namespace WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Reply
@@ -36,10 +37,10 @@ class Reply
     private $postedAt;
 
     /**
-     * @var string
-     * @ORM\OneToMany(targetEntity="WebsiteBundle\Entity\User", mappedBy="reply")
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\Topics", inversedBy="reply")
+     * @ORM\JoinColumn(name="id_topic", referencedColumnName="id")
      */
-    private $userName;
+    private $sujet;
 
     /**
      * Get id
@@ -100,58 +101,36 @@ class Reply
     }
 
     /**
-     * Set userName
-     *
-     * @param string $userName
-     *
-     * @return Reply
-     */
-    public function setUserName($userName)
-    {
-        $this->userName = $userName;
-
-        return $this;
-    }
-
-    /**
-     * Get userName
-     *
-     * @return string
-     */
-    public function getUserName()
-    {
-        return $this->userName;
-    }
-    /**
      * Constructor
      */
     public function __construct()
     {
         $this->postedAt = new \DateTime();
-        $this->userName = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->sujet = new ArrayCollection();
     }
 
+
     /**
-     * Add userName
+     * Set sujet
      *
-     * @param \WebsiteBundle\Entity\User $userName
+     * @param \WebsiteBundle\Entity\Topics $sujet
      *
      * @return Reply
      */
-    public function addUserName(\WebsiteBundle\Entity\User $userName)
+    public function setSujet(\WebsiteBundle\Entity\Topics $sujet)
     {
-        $this->userName[] = $userName;
+        $this->sujet = $sujet;
 
         return $this;
     }
 
     /**
-     * Remove userName
+     * Get sujet
      *
-     * @param \WebsiteBundle\Entity\User $userName
+     * @return \WebsiteBundle\Entity\Topics
      */
-    public function removeUserName(\WebsiteBundle\Entity\User $userName)
+    public function getSujet()
     {
-        $this->userName->removeElement($userName);
+        return $this->sujet;
     }
 }

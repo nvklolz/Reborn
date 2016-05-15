@@ -37,6 +37,25 @@
                 </div>
             </div>
         </div>
+        {% for replys in reply %}
+        <div class="col-lg-12 border-content-sujet">
+            <div class="col-lg-2 col-left-content-sujet">
+                <h4>Nvk</h4>
+                <small>Site Admin</small>
+                <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
+                <small>joined : </small>
+            </div>
+            <div class="col-lg-10">
+                <div class="head-content-sujet">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>{{ replys.postedat|time_diff }}
+                </div>
+                <hr>
+                <div class="main-content-sujet">
+                    {{ replys.content }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     <footer>
     </footer>
 {% endblock %}
