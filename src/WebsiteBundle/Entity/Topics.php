@@ -49,6 +49,13 @@ class Topics
      */
     private $reply;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbreply", type="integer")
+     */
+    private $nbReply;
+
     public function __construct()
     {
         $this->reply = new ArrayCollection();
@@ -201,5 +208,29 @@ class Topics
     public function getReply()
     {
         return $this->reply;
+    }
+
+    /**
+     * Set nbReply
+     *
+     * @param integer $nbReply
+     *
+     * @return Topics
+     */
+    public function setNbReply($nbReply)
+    {
+        $this->nbReply = $nbReply;
+
+        return $this;
+    }
+
+    /**
+     * Get nbReply
+     *
+     * @return integer
+     */
+    public function getNbReply()
+    {
+        return $this->nbReply;
     }
 }

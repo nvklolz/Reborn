@@ -49,6 +49,13 @@ class Topics
      */
     private $reply;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbreply", type="integer")
+     */
+    private $nbReply;
+
     public function __construct()
     {
         $this->reply = new ArrayCollection();

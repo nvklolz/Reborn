@@ -5,6 +5,7 @@ namespace WebsiteBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use WebsiteBundle\Form\Type\FormReply;
+use WebsiteBundle\Form\Type\FormTopic;
 use WebsiteBundle\Entity\Reply;
 use WebsiteBundle\Entity\Topics;
 
@@ -19,6 +20,11 @@ class AddreplyController extends Controller
         if(!$sujet) {
             echo "l'id n'existe pas";
         }
+        $count = $sujet->getNbReply();
+        $count++;
+        dump($count);
+        $sujet->setNbReply($count);
+
         $newReply = new Reply();
         $newReply->setSujet($sujet);
 
@@ -29,6 +35,7 @@ class AddreplyController extends Controller
             $em->persist($newReply);
             $em->flush();
         }
+
         return $this->render(
             'WebsiteBundle:Forum:addreply.html.twig',
             array(
