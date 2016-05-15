@@ -5,7 +5,7 @@
      <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
      <style type="text/css">
          body {
-             background: url('../images/homepage/background.jpg') no-repeat top center #151b2e;
+             background: url('{{ asset('images/homepage/background.jpg') }}') no-repeat top center #151b2e;
          }
      </style>
  {% endblock %}
@@ -14,48 +14,56 @@
         <img src="{{ asset('images/homepage/test.png') }}" alt="">
     </header>
     <div id="content">
-        <div class="content-separator-title">
-            <p>
-                Forum Index
-            </p>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="content-separator-title">
+                    <p>
+                        Forum Index
+                    </p>
+                </div>
+                <h4 class="head-titre-add-sujet">{{ sujet.titre }}</h4>
+                <div class="add-new-topic white-link">
+                    <a href="{{ path('website_reply_add', {'id' : sujet.id})  }}"><p>+ Post Reply</p></a>
+                </div>
+                <div class="col-lg-12 border-content-sujet">
+                    <div class="col-lg-2 col-left-content-sujet">
+                        <h4>Nvk</h4>
+                        <small>Site Admin</small>
+                        <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
+                        <small>joined : </small>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="head-content-sujet">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>{{ sujet.createdat|date('m/d/Y') }}
+                        </div>
+                        <hr>
+                        <div class="main-content-sujet">
+                            {{ sujet.content }}
+                        </div>
+                    </div>
+                </div>
+                {% for replys in reply %}
+                    <div class="col-lg-12 border-content-sujet">
+                        <div class="col-lg-2 col-left-content-sujet">
+                            <h4>Nvk</h4>
+                            <small>Site Admin</small>
+                            <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
+                            <small>joined : </small>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="head-content-sujet">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>{{ replys.postedat|time_diff }}
+                            </div>
+                            <hr>
+                            <div class="main-content-sujet">
+                                {{ replys.content }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-        <h4 class="head-titre-add-sujet">{{ sujet.titre }}</h4>
-        <div class="col-lg-12 border-content-sujet">
-            <div class="col-lg-2 col-left-content-sujet">
-                <h4>Nvk</h4>
-                <small>Site Admin</small>
-                <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
-                <small>joined : </small>
-            </div>
-            <div class="col-lg-10">
-                <div class="head-content-sujet">
-                    <span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>{{ sujet.createdat|date('m/d/Y') }}
-                </div>
-                <hr>
-                <div class="main-content-sujet">
-                    {{ sujet.content }}
-                </div>
-            </div>
-        </div>
-        {% for replys in reply %}
-        <div class="col-lg-12 border-content-sujet">
-            <div class="col-lg-2 col-left-content-sujet">
-                <h4>Nvk</h4>
-                <small>Site Admin</small>
-                <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
-                <small>joined : </small>
-            </div>
-            <div class="col-lg-10">
-                <div class="head-content-sujet">
-                    <span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>{{ replys.postedat|time_diff }}
-                </div>
-                <hr>
-                <div class="main-content-sujet">
-                    {{ replys.content }}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+    </div>
     <footer>
     </footer>
 {% endblock %}
