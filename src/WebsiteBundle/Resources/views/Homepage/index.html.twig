@@ -3,14 +3,13 @@
         {{ parent() }}
         <style type="text/css">
             body {
-                background: url('../images/homepage/background.jpg') no-repeat top center #151b2e;
-                color: #798896;
+                background: url('{{ asset('images/homepage/fond.jpg') }}') no-repeat top center #000000;
+                color: #798896
             }
         </style>
     {% endblock %}
 {% block body %}
     <header>
-        <img src="{{ asset('images/homepage/test.png') }}" alt="">
     </header>
     <div id="content">
         <div class="banner">
