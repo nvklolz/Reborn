@@ -18,7 +18,7 @@ header img {
     left: 30px;
 }
 .banner {
-    background: url('../images/homepage/lk.jpg') 0 0;
+    background: url('../images/homepage/sylvanas.jpg') 0 0;
     width: 100%;
     height: 200px;
     background-size: 100%;
@@ -123,6 +123,12 @@ header img {
     position: absolute;
     top: 0;
     right: 620px;
+}
+.illidan-eyes {
+    position: absolute;
+    top: 109px;
+    left: 784px;
+    opacity: 0;
 }
 
 
