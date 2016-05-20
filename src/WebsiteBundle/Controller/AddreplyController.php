@@ -14,6 +14,18 @@ class AddreplyController extends Controller
 
     public function addreplyAction($id, Request $request)
     {
+        $headTopic = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:HeadTopic')
+            ->find($id);
+        $topic = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:Topics')
+            ->find($id);
+        $sujet = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:Topics')
+            ->find($id);
+        $reply = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:Reply')
+            ->findBySujet($id);
 
         $em = $this->getDoctrine()->getManager();
         $sujet = $em->getRepository('WebsiteBundle:Topics')->find($id);
@@ -34,12 +46,17 @@ class AddreplyController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($newReply);
             $em->flush();
+            return $this->redirect($this->generateUrl('website_view_topic', array("id" => $id) ));
         }
 
         return $this->render(
             'WebsiteBundle:Forum:addreply.html.twig',
             array(
                 'form' => $form->createView(),
+                'sujet' => $sujet,
+                'reply' => $reply,
+                'headTopic' => $headTopic,
+                'topic' => $topic
             )
         );
     }

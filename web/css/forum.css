@@ -102,3 +102,10 @@
     background-color: inherit;
     border-radius: 0;
 }
+#website_bundle_form_reply_content {
+    width:800px;
+    height:100px;
+}
+.add-reply {
+    padding-left:0;
+}
