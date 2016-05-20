@@ -1,3 +1,9 @@
+.breadcrumb a {
+    color: #88C675;
+}
+.breadcrumb a:focus, .breadcrumb a:hover {
+    color: #88C675;
+}
 #content {
     background-color: #ffffff;
 }
@@ -8,7 +14,7 @@
 .forum-category {
     height: 40px;
     width: 100%;
-    background-color: #5679A4;
+    background-color: #579B51;
     color: #ffffff;
     padding: 0 25px;
     border-radius: 0 5px 5px 0;
@@ -45,7 +51,7 @@
     text-align: right;
 }
 .add-new-topic {
-    background-color: #599877;
+    background-color: #3C7771;
     width: 160px;
     border-radius: 0 4px 4px 0;
     margin: 30px 0 10px 0;
