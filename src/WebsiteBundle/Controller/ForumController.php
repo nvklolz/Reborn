@@ -15,8 +15,17 @@ class ForumController extends Controller
         $headtopics = $this->getDoctrine()
             ->getRepository('WebsiteBundle:HeadTopic')
             ->findAll();
+        $nbTopics = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('WebsiteBundle:Topics');
+        $qb = $nbTopics->createQueryBuilder('a');
+        $qb->select('COUNT(a)');
+        $count = $qb->getQuery()->getSingleScalarResult();
+        dump($count);
+
         return $this->render('WebsiteBundle:Forum:index.html.twig',
-            array('headTopics' => $headtopics
+            array('headTopics' => $headtopics,
+                  'countTopics' => $count
             ));
     }
 }

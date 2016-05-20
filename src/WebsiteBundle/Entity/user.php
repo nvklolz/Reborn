@@ -28,6 +28,12 @@ class User extends BaseUser
         // your own logic
     }
     /**
+     *
+     * @ORM\OneToMany(targetEntity="WebsiteBundle\Entity\Topics", mappedBy="sujetUserLink")
+     */
+    private $userSujetLink;
+
+    /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", nullable=true)
@@ -148,5 +154,39 @@ class User extends BaseUser
     public function getReply()
     {
         return $this->reply;
+    }
+
+    /**
+     * Add userSujetLink
+     *
+     * @param \WebsiteBundle\Entity\Topics $userSujetLink
+     *
+     * @return User
+     */
+    public function addUserSujetLink(\WebsiteBundle\Entity\Topics $userSujetLink)
+    {
+        $this->userSujetLink[] = $userSujetLink;
+
+        return $this;
+    }
+
+    /**
+     * Remove userSujetLink
+     *
+     * @param \WebsiteBundle\Entity\Topics $userSujetLink
+     */
+    public function removeUserSujetLink(\WebsiteBundle\Entity\Topics $userSujetLink)
+    {
+        $this->userSujetLink->removeElement($userSujetLink);
+    }
+
+    /**
+     * Get userSujetLink
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserSujetLink()
+    {
+        return $this->userSujetLink;
     }
 }

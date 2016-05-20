@@ -28,14 +28,7 @@ class Topics
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="alt_titre", type="string", length=255)
-     */
-    private $altTitre;
-
+    
     /**
      * @var \DateTime
      *
@@ -55,6 +48,12 @@ class Topics
      * @ORM\Column(name="nbreply", type="integer", nullable=true)
      */
     private $nbReply;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\User", inversedBy="userSujetLink")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     */
+    private $sujetUserLink;
 
     /**
      * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\HeadTopic", inversedBy="topicsLink")
@@ -287,5 +286,29 @@ class Topics
     public function getHeadTopicLink()
     {
         return $this->headTopicLink;
+    }
+
+    /**
+     * Set sujetUserLink
+     *
+     * @param \WebsiteBundle\Entity\User $sujetUserLink
+     *
+     * @return Topics
+     */
+    public function setSujetUserLink(\WebsiteBundle\Entity\User $sujetUserLink = null)
+    {
+        $this->sujetUserLink = $sujetUserLink;
+
+        return $this;
+    }
+
+    /**
+     * Get sujetUserLink
+     *
+     * @return \WebsiteBundle\Entity\User
+     */
+    public function getSujetUserLink()
+    {
+        return $this->sujetUserLink;
     }
 }

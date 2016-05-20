@@ -13,14 +13,17 @@ class AddsujetController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $headTopic = $em->getRepository('WebsiteBundle:HeadTopic')->find($id);
-        dump($headTopic);
+        $user = $this->getUser();
+        dump($user);
         $newTopic = new Topics();
+        $newTopic->setSujetUserLink($user);
         $newTopic->setHeadTopicLink($headTopic);
         $form = $this->createForm(FormTopic::class, $newTopic);
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($newTopic);
             $em->flush();
+            return $this->redirect($this->generateUrl('website_topic', array("id" => $id)));
         }
         return $this->render(
             'WebsiteBundle:Forum:addsujet.html.twig',

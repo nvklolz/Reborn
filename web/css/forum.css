@@ -26,6 +26,7 @@
 }
 .row-category-topics, .row-category-posts {
     width:70px;
+    float: right;
 }
 .row-category-topics div, .row-category-posts div {
     width:50px;
@@ -108,4 +109,10 @@
 }
 .add-reply {
     padding-left:0;
+}
+.form-group.title-sujet {
+    margin: 20px 0 0 12px;
+}
+#website_bundle_form_topic_content {
+    height: 125px;
 }

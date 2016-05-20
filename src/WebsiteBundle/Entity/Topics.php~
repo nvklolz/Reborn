@@ -28,14 +28,7 @@ class Topics
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="alt_titre", type="string", length=255)
-     */
-    private $altTitre;
-
+    
     /**
      * @var \DateTime
      *
@@ -57,7 +50,13 @@ class Topics
     private $nbReply;
 
     /**
-     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\HeadTopic", inversedBy="TopicsLink")
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\User", inversedBy="userSujetLink")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     */
+    private $sujetUserLink;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\HeadTopic", inversedBy="topicsLink")
      * @ORM\JoinColumn(name="id_head_topic", referencedColumnName="id")
      */
     private $headTopicLink;
@@ -263,5 +262,29 @@ class Topics
     public function getRetachedHeadTopic()
     {
         return $this->retachedHeadTopic;
+    }
+
+    /**
+     * Set headTopicLink
+     *
+     * @param \WebsiteBundle\Entity\HeadTopic $headTopicLink
+     *
+     * @return Topics
+     */
+    public function setHeadTopicLink(\WebsiteBundle\Entity\HeadTopic $headTopicLink = null)
+    {
+        $this->headTopicLink = $headTopicLink;
+
+        return $this;
+    }
+
+    /**
+     * Get headTopicLink
+     *
+     * @return \WebsiteBundle\Entity\HeadTopic
+     */
+    public function getHeadTopicLink()
+    {
+        return $this->headTopicLink;
     }
 }

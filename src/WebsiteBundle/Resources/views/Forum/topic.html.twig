@@ -34,19 +34,15 @@
                         <a href=" {{ path('website_view_topic', {'id' : topic.id})  }}">
                         {{ topic.titre }}
                             <div>
-                                <small>{{ topic.alttitre }}</small>
+                                <small>posted by {{ topic.sujetUserLink.userName }}, {{ topic.createdat|time_diff }}</small>
                             </div>
                         </a>
                     </div>
                     <div class="row-category-posts">
                         <div>
                             <span>{{ topic.nbReply|default(0) }}</span><br>
-                            <small>Posts</small>
+                            <small>Réponse(s)</small>
                         </div>
-                    </div>
-                    <div class="row-category-lastpost">
-                        Re: Welcome aboard
-                        <div><small>By {{ app.user.userName }} - {{ topic.createdat|date('m/d/Y') }}</small></div>
                     </div>
                     <hr>
                 </div>

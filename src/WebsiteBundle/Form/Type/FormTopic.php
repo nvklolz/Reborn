@@ -14,9 +14,16 @@ class FormTopic extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', TextType::class)
-            ->add('alttitre', TextType::class)
-            ->add('content', TextareaType::class)
+            ->add('titre', TextType::class, array (
+               'attr' => array(
+                   'placeholder' => 'Titre'
+               )
+            ))
+            ->add('content', TextareaType::class, array (
+                'attr' => array(
+                    'placeholder' => 'Message'
+                )
+            ))
             ->add('valider', SubmitType::class);
     }
     public function setDefaultOptions(OptionsResolver $resolver)
