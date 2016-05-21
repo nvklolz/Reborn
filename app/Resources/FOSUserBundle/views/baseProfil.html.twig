@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title> Incom e-Sport - Profil </title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset ('css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="{{ asset ('css/profil/metisMenu.min.css') }}" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="{{ asset ('css/profil/timeline.css') }}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{{ asset ('css/profil/sb-admin-2.css') }}" rel="stylesheet">
+        <link href="{{ asset ('css/profil/incom-profil.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset ('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css') }}">
+
+        <!-- Morris Charts CSS -->
+        <link href="{{ asset('css/profil/morris.css') }}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{{ asset ('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    {% block body %}
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <div class="avatar">
+                                <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(125,125) }}" class="img-circle avatar-sujet" alt="" id="userimg">
+                                <h4> {{ app.user.username }} <hr></h4>
+                                <p> rang : <br> <mark>Membre</mark> </p>
+                            </div>
+                            <div class="avatar-buttons">
+                                <a href="{{ path('website_index') }}"><button type="button" class="btn btn-outline btn-success">Accueil</button></a>
+                                <a href="{{ path ('fos_user_security_logout') }}"><button type="button" class="btn btn-outline btn-danger">Déconnexion</button></a>
+                            </div>
+                            <li>
+                                <a href="{{ path ('fos_user_profile_show') }}"><i class="fa fa-dashboard fa-fw"></i> Voir mon profil</a>
+                            </li>
+                            <li>
+                                <a href="{{ path ('fos_user_profile_edit') }}"><i class="fa fa-edit fa-fw"></i> Modifier mon profil</a>
+                            </li>
+                            <li>
+                                <a href="{{ path ('fos_user_change_password') }}"><i class="fa fa-key fa-fw"></i> Modifier mon mot de passe</a>
+                            </li>
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <li>
+                                    <a href="#"><i class="fa fa-user-secret fa-fw"></i> Pannel Admin</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="page-wrapper">
+            <div class="row">
+                {% if app.request.hasPreviousSession %}
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+                            <div role="alert" class="alert alert-{{ type }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+                <div>
+                    {% block fos_user_content %}
+                    {% endblock fos_user_content %}
+                </div>
+            </div>
+    {% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset ('js/jquery.min.js') }}"></script>
+        <script src="{{ asset ('js/jquery.min.map') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset ('js/bootstrap.min.js') }}"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="{{ asset ('js/profil/metisMenu.min.js') }}"></script>
+
+        <!-- Morris Charts JavaScript -->
+        <script src="{{ asset ('js/profil/raphael-min.js') }}"></script>
+        <script src="{{ asset ('js/profil/morris.min.js') }}"></script>
+        <script src="{{ asset ('js/profil/morris-data.js') }}"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ asset ('js/profil/sb-admin-2.js') }}"></script>
+        <script src="{{ asset ('js/profil/bootstrap-datetimepicker.js') }}"></script>
+        <script src="{{ asset ('js/profil/bootstrap-datetimepicker.fr.js') }}"></script>
+        <script type="text/javascript">
+            $('#date').datetimepicker({
+                todayBtn:"true",
+                format:"dd-mm-yyyy",
+                autoclose:"true",
+                pickerPosition:"bottom-left",
+                startView:"year",
+                minView:"month",
+                language:"fr"
+            });
+        </script>
+    {% endblock %}
+    </body>
+</html>

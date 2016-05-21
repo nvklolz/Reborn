@@ -14,7 +14,9 @@ class AddsujetController extends Controller
         $em = $this->getDoctrine()->getManager();
         $headTopic = $em->getRepository('WebsiteBundle:HeadTopic')->find($id);
         $user = $this->getUser();
-        dump($user);
+        $count = $user->getnbPosts();
+        $count++;
+        $user->setnbPosts($count);
         $newTopic = new Topics();
         $newTopic->setSujetUserLink($user);
         $newTopic->setHeadTopicLink($headTopic);

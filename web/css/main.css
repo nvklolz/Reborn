@@ -136,6 +136,10 @@ header img {
 .nav.navbar-nav.navbar-right li:last-child a {
     color: #5CB85C;
 }
+.alert {
+    margin-top:20px;
+    margin-bottom:0;
+}
 
 
 

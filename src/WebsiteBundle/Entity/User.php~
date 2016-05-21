@@ -22,16 +22,17 @@ class User extends BaseUser
      */
     protected $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
     /**
      *
      * @ORM\OneToMany(targetEntity="WebsiteBundle\Entity\Topics", mappedBy="sujetUserLink")
      */
     private $userSujetLink;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="WebsiteBundle\Entity\Reply", mappedBy="replyUserLink")
+     */
+    private $userReplyLink;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -41,6 +42,27 @@ class User extends BaseUser
      * @var File
      */
     private $imageFile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rang", length=255)
+     */
+    private $rang = "Membre";
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbposts", type="integer", nullable=true)
+     */
+    private $nbPosts;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="joined_at", type="datetime")
+     */
+    private $joinedAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -55,6 +77,12 @@ class User extends BaseUser
      * @var \DateTime
      */
     private $updatedAt;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->joinedAt = new \DateTime();
+    }
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -154,5 +182,111 @@ class User extends BaseUser
     public function getReply()
     {
         return $this->reply;
+    }
+
+    /**
+     * Add userSujetLink
+     *
+     * @param \WebsiteBundle\Entity\Topics $userSujetLink
+     *
+     * @return User
+     */
+    public function addUserSujetLink(\WebsiteBundle\Entity\Topics $userSujetLink)
+    {
+        $this->userSujetLink[] = $userSujetLink;
+
+        return $this;
+    }
+
+    /**
+     * Remove userSujetLink
+     *
+     * @param \WebsiteBundle\Entity\Topics $userSujetLink
+     */
+    public function removeUserSujetLink(\WebsiteBundle\Entity\Topics $userSujetLink)
+    {
+        $this->userSujetLink->removeElement($userSujetLink);
+    }
+
+    /**
+     * Get userSujetLink
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserSujetLink()
+    {
+        return $this->userSujetLink;
+    }
+
+    /**
+     * Set rang
+     *
+     * @param string $rang
+     *
+     * @return User
+     */
+    public function setRang($rang)
+    {
+        $this->rang = $rang;
+
+        return $this;
+    }
+
+    /**
+     * Get rang
+     *
+     * @return string
+     */
+    public function getRang()
+    {
+        return $this->rang;
+    }
+
+    /**
+     * Set nbPosts
+     *
+     * @param integer $nbPosts
+     *
+     * @return User
+     */
+    public function setNbPosts($nbPosts)
+    {
+        $this->nbPosts = $nbPosts;
+
+        return $this;
+    }
+
+    /**
+     * Get nbPosts
+     *
+     * @return integer
+     */
+    public function getNbPosts()
+    {
+        return $this->nbPosts;
+    }
+
+    /**
+     * Set joinedAt
+     *
+     * @param \DateTime $joinedAt
+     *
+     * @return User
+     */
+    public function setJoinedAt($joinedAt)
+    {
+        $this->joinedAt = $joinedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get joinedAt
+     *
+     * @return \DateTime
+     */
+    public function getJoinedAt()
+    {
+        return $this->joinedAt;
     }
 }

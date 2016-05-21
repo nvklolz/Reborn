@@ -34,11 +34,15 @@ class AddreplyController extends Controller
         }
         $count = $sujet->getNbReply();
         $count++;
-        dump($count);
         $sujet->setNbReply($count);
 
+        $user = $this->getUser();
+        $count = $user->getnbPosts();
+        $count++;
+        $user->setnbPosts($count);
         $newReply = new Reply();
         $newReply->setSujet($sujet);
+        $newReply->setReplyUserLink($user);
 
         $form = $this->createForm(FormReply::class, $newReply);
         if ($form->handleRequest($request)->isValid()) {

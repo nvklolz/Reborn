@@ -81,7 +81,7 @@ fos_user:
             enabled: true
     from_email:
         address:   metempsycose.guilde@gmail.com
-        sender_name: Nvk from Métempsycose
+        sender_name: Nvk from Reborn
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: WebsiteBundle\Entity\User
@@ -103,7 +103,7 @@ vich_uploader:
 
 gregwar_image:
     cache_dir: images/products/cache
-
+    fallback_image: images/products/no_avatar.jpg
 services:
   twig.extension.text:
        class: Twig_Extensions_Extension_Date

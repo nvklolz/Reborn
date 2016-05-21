@@ -287,4 +287,28 @@ class Topics
     {
         return $this->headTopicLink;
     }
+
+    /**
+     * Set sujetUserLink
+     *
+     * @param \WebsiteBundle\Entity\User $sujetUserLink
+     *
+     * @return Topics
+     */
+    public function setSujetUserLink(\WebsiteBundle\Entity\User $sujetUserLink = null)
+    {
+        $this->sujetUserLink = $sujetUserLink;
+
+        return $this;
+    }
+
+    /**
+     * Get sujetUserLink
+     *
+     * @return \WebsiteBundle\Entity\User
+     */
+    public function getSujetUserLink()
+    {
+        return $this->sujetUserLink;
+    }
 }

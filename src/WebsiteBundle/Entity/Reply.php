@@ -30,6 +30,12 @@ class Reply
     private $content;
 
     /**
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\User", inversedBy="userReplyLink")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     */
+    private $replyUserLink;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="posted_at", type="datetime")
@@ -132,5 +138,29 @@ class Reply
     public function getSujet()
     {
         return $this->sujet;
+    }
+
+    /**
+     * Set replyUserLink
+     *
+     * @param \WebsiteBundle\Entity\User $replyUserLink
+     *
+     * @return Reply
+     */
+    public function setReplyUserLink(\WebsiteBundle\Entity\User $replyUserLink = null)
+    {
+        $this->replyUserLink = $replyUserLink;
+
+        return $this;
+    }
+
+    /**
+     * Get replyUserLink
+     *
+     * @return \WebsiteBundle\Entity\User
+     */
+    public function getReplyUserLink()
+    {
+        return $this->replyUserLink;
     }
 }

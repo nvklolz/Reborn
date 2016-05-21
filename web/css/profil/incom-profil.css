@@ -1,0 +1,30 @@
+.avatar {
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.avatar-buttons {
+	text-align: center;
+	padding-bottom: 10px;
+}
+#userimg {
+	border: 5px solid #e0e0e0;
+}
+.navbar.navbar-default.navbar-static-top {
+	background-color:#222;
+	border-color:#222;
+}
+.btn.btn-warning {
+	background-color: #7550ba;
+	border-color: #7550ba;
+}
+.panel-body.rs {
+	text-align: center;
+}
+img.logo {
+	margin-top: 5px;
+}
+.alert {
+	margin-top:20px;
+	margin-bottom:0px;
+}

@@ -31,10 +31,12 @@
                 </div>
                 <div class="col-lg-12 border-content-sujet">
                     <div class="col-lg-2 col-left-content-sujet">
-                        <h4>{{ app.user.userName }}</h4>
-                        <small>Site Admin</small>
-                        <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
-                        <small>joined : </small>
+                        <h4>{{ topic.sujetUserLink.username }}</h4>
+                        <small>{{ topic.sujetUserLink.rang }}</small>
+                        <img src=" {{ image('images/products/'~ topic.sujetUserLink.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
+                        <small>joined : {{ topic.sujetUserLink.joinedAt|time_diff }}</small>
+                        <br>
+                        <small>Posts : {{ topic.sujetUserLink.nbPosts }}</small>
                     </div>
                     <div class="col-lg-10">
                         <div class="head-content-sujet">
@@ -49,10 +51,12 @@
                 {% for replys in reply %}
                     <div class="col-lg-12 border-content-sujet">
                         <div class="col-lg-2 col-left-content-sujet">
-                            <h4>{{ app.user.userName }}</h4>
-                            <small>Site Admin</small>
-                            <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
-                            <small>joined : </small>
+                            <h4>{{ replys.replyUserLink.userName }}</h4>
+                            <small>{{ replys.replyUserLink.rang }}</small>
+                            <img src=" {{ image('images/products/'~ replys.replyUserLink.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
+                            <small>joined : &nbsp;{{ replys.replyUserLink.joinedAt|time_diff  }}</small>
+                            <br>
+                            <small>Posts : {{ replys.replyUserLink.nbPosts }}</small>
                         </div>
                         <div class="col-lg-10">
                             <div class="head-content-sujet">

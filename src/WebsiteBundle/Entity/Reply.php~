@@ -3,6 +3,7 @@
 namespace WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Reply
@@ -29,6 +30,12 @@ class Reply
     private $content;
 
     /**
+     * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\User", inversedBy="userReplyLink")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     */
+    private $replyUserLink;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="posted_at", type="datetime")
@@ -37,7 +44,7 @@ class Reply
 
     /**
      * @ORM\ManyToOne(targetEntity="WebsiteBundle\Entity\Topics", inversedBy="reply")
-     * @ORM\JoinColumn(name="id_topic", referencedColumnName="titre")
+     * @ORM\JoinColumn(name="id_topic", referencedColumnName="id")
      */
     private $sujet;
 
@@ -105,6 +112,7 @@ class Reply
     public function __construct()
     {
         $this->postedAt = new \DateTime();
+        $this->sujet = new ArrayCollection();
     }
 
 
