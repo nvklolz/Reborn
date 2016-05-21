@@ -18,7 +18,7 @@ header img {
     left: 30px;
 }
 .banner {
-    background: url('../images/homepage/sylvanas.jpg') 0 0;
+    background: url('../images/homepage/banner2.jpg') 0 -119px;
     width: 100%;
     height: 200px;
     background-size: 100%;
@@ -55,9 +55,12 @@ header img {
 }
 .section {
     width:800px;
-    height:187px;
-    margin:15px 0 15px 25px;
+    height:249px;
+    margin:28px 0 1px 25px;
     clear: both;
+}
+.section.primary-news {
+    color: #ffffff;
 }
 .section.secondary-news {
     height:80px;
@@ -129,6 +132,9 @@ header img {
     top: 109px;
     left: 784px;
     opacity: 0;
+}
+.nav.navbar-nav.navbar-right li:last-child a {
+    color: #5CB85C;
 }
 
 
