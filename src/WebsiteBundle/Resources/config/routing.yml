@@ -25,3 +25,7 @@ website_reply_add:
 website_view_topic:
     path:    /forum/sujet/{id}
     defaults: { _controller: WebsiteBundle:Viewsujet:viewsujet }
+
+website_edit_topic:
+    path:    /forum/sujet/{id}/edit
+    defaults: { _controller: WebsiteBundle:Addsujet:editsujet }

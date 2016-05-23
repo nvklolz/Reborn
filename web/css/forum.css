@@ -122,3 +122,6 @@
 #website_bundle_form_topic_content {
     height: 125px;
 }
+.sujet-edit-link {
+    float: right;
+}

@@ -34,4 +34,30 @@ class AddsujetController extends Controller
             )
         );
     }
+
+    public function editsujetAction($id, Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $topic = $em->getRepository('WebsiteBundle:Topics')->find($id);
+        if (!$topic) {
+            echo "L'id n'existe pas";
+        }
+        $editTopic = $this->createForm(FormTopic::class, $topic);
+
+        $editTopic->handleRequest($request);
+        $this->get('session')->getFlashBag()->add(
+            'noticeEdit',
+            'L\'evenement à été édité !');
+        if ($editTopic->isValid()) {
+            $em->flush();
+            return $this->redirect($this->generateUrl('website_view_topic', array("id" => $id)));
+
+        }
+        return $this->render('WebsiteBundle:Forum:addsujet.html.twig',
+            array(
+                'form' => $editTopic->createView(),
+                'actionForm'  => $this->generateUrl('website_edit_topic', array("id" => $id) )
+            )
+
+        );
+    }
 }

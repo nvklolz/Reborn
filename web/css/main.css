@@ -36,6 +36,7 @@ header img {
     min-height: 1000px;
     background-color: #3F403F;
     margin:auto;
+    position: relative;
 }
 .content-separator-title {
     height:40px;
@@ -119,18 +120,18 @@ header img {
 }
 .left-horn {
     position: absolute;
-    top: 4px;
-    left: 626px;
+    top: -270px;
+    left: 310px;
 }
 .right-horn {
     position: absolute;
-    top: 0;
-    right: 620px;
+    top: -273px;
+    right: 304px;
 }
 .illidan-eyes {
     position: absolute;
-    top: 109px;
-    left: 784px;
+    top: -164px;
+    left: 468px;
     opacity: 0;
 }
 .nav.navbar-nav.navbar-right li:last-child a {
