@@ -152,6 +152,12 @@
                     </tr>
                 </table>
             </div>
+            <div class="secondary-section-discord">
+                <iframe src="https://discordapp.com/widget?id=184722639783329793&theme=dark" width="235" height="300" allowtransparency="true" frameborder="0"></iframe>
+            </div>
+            <div class="secondary-section-wowprogress">
+                <a href=http://wowprogress.com/><img alt='WoW Guild Rankings' src='http://wowprogress.com/guild_img/11/out/type.site/guild_rank.realm' border='0'/></a>
+            </div>
         </div>
     </div>
 
@@ -160,10 +166,23 @@
     </footer>
 {% endblock %}
 {% block javascripts %}
+    <script type="text/javascript" src="http://discord.deliriousdrunkards.com/discord.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
     <script type="text/javascript">
         var tlrepeatEyes = new TimelineMax({delay: 3, repeat: -1, repeatDelay: 1, yoyo:true});
         tlrepeatEyes
-                .fromTo('.illidan-eyes',.7, {opacity:0}, {opacity:0.9})
+                .fromTo('.illidan-eyes',.7, {opacity:0}, {opacity:0.9});
+
+        discordWidget.init({
+            serverId: '51143782082543616',
+            title: 'Discord Widget Title',
+            join: false,
+            alphabetical: false,
+            theme: 'dark',
+            hideChannels: ['Channel Name 1', 'Channel Name 2'],
+            showAllUsers: true,
+            allUsersDefaultState: true
+        });
+        discordWidget.render();
     </script>
 {% endblock %}

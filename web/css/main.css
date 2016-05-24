@@ -18,7 +18,7 @@ header img {
     left: 30px;
 }
 .banner {
-    background: url('../images/homepage/banner2.jpg') 0 -119px;
+    background: url('../images/homepage/banner.jpg') 0 -119px;
     width: 100%;
     height: 200px;
     background-size: 100%;
@@ -97,12 +97,19 @@ header img {
 .section-primary-right {
     width: 275px;
     background-color: #787f7b;
-    height: 300px;
+    height: 760px;
     float: right;
     padding:35px 20px;
 }
 .section-primary-recrutement td {
     margin-bottom:10px;
+}
+.secondary-section-discord {
+    margin-top:10px;
+}
+.secondary-section-wowprogress {
+    margin-top:10px;
+    text-align: center;
 }
 .class img {
     vertical-align: middle;
@@ -141,7 +148,9 @@ header img {
     margin-top:20px;
     margin-bottom:0;
 }
-
+#discord-widget {
+    margin-right:20px;
+}
 
 
 

@@ -22,6 +22,10 @@ website_reply_add:
     path:    /forum/sujet/{id}/add/reply
     defaults: { _controller: WebsiteBundle:Addreply:addreply }
 
+website_reply_edit:
+    path:    /forum/sujet/{id}/edit/reply/{idreply}
+    defaults: { _controller: WebsiteBundle:Addreply:editreply }
+
 website_view_topic:
     path:    /forum/sujet/{id}
     defaults: { _controller: WebsiteBundle:Viewsujet:viewsujet }

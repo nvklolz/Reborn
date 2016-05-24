@@ -64,4 +64,40 @@ class AddreplyController extends Controller
             )
         );
     }
+    public function editreplyAction($id, Request $request, $idreply) {
+        $headTopic = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:HeadTopic')
+            ->find($id);
+        $topic = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:Topics')
+            ->find($id);
+        $sujet = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:Topics')
+            ->find($id);
+        $reply = $this->getDoctrine()
+            ->getRepository('WebsiteBundle:Reply')
+            ->findBySujet($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $reply = $em->getRepository('WebsiteBundle:Reply')->find($idreply);
+        $editReply = $this->createForm(FormReply::class, $reply);
+
+        $editReply->handleRequest($request);
+        if ($editReply->isValid()) {
+            $em->flush();
+            return $this->redirect($this->generateUrl('website_view_topic', array("id" => $id)));
+
+        }
+        return $this->render('WebsiteBundle:Forum:addreply.html.twig',
+            array(
+                'sujet' => $sujet,
+                'reply' => $reply,
+                'headTopic' => $headTopic,
+                'topic' => $topic,
+                'form' => $editReply->createView(),
+                'actionForm'  => $this->generateUrl('website_edit_topic', array("id" => $id) )
+            )
+
+        );
+    }
 }

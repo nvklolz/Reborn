@@ -21,9 +21,11 @@
                 <li class="active">{{ headTopic.titre}}</li>
             </ol>
         </div>
+        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
         <div class="add-new-topic white-link">
             <a href="{{ path('website_topic_add', {'id' : headTopic.id }) }}"><p>+ Nouveau Sujet</p></a>
         </div>
+        {% endif %}
         <div class="section-forum">
             <div class="forum-category">
                 <p>
