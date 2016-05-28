@@ -37,7 +37,7 @@
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <div class="avatar">
-                                <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(125,125) }}" class="img-circle avatar-sujet" alt="" id="userimg">
+                                <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(125,125).jpeg() }}" class="img-circle avatar-sujet" alt="" id="userimg">
                                 <h4> {{ app.user.username }} <hr></h4>
                                 <p> rang : <br> <mark>Membre</mark> </p>
                             </div>

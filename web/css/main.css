@@ -10,12 +10,18 @@ header img {
     display: block;
     margin: auto;
 }
-.navbar-brand>img {
+.logo-full {
     display: block;
-    width: 100%;
     position: absolute;
-    top: 11px;
+    top: 27px;
     left: 30px;
+}
+.logo-small {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 30px;
+    width: 310%;
 }
 .banner {
     background: url('../images/homepage/banner.jpg') 0 -119px;
@@ -105,7 +111,7 @@ header img {
     margin-bottom:10px;
 }
 .secondary-section-discord {
-    margin-top:10px;
+    margin-top:40px;
 }
 .secondary-section-wowprogress {
     margin-top:10px;

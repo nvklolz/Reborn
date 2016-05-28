@@ -12,7 +12,9 @@
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href="{{ asset('css/froala_style.min.css')}}" rel="stylesheet" type="text/css" />
     {% endblock %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
@@ -26,13 +28,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('website_index') }}"><img src="{{ asset('images/homepage/logo.png') }}" alt=""></a>
+                <a class="navbar-brand" href="{{ path('website_index') }}">
+                    {% set currentPath = app.request.attributes.get('_route') %}
+                    {% if currentPath == 'website_index' %}
+                        <img class="logo-full" src="{{ asset('images/homepage/logo_GuildeReborn.png') }}" alt="">
+                    {% else %}
+                        <img class="logo-small" src="{{ asset('images/homepage/logo_small_reborn.png') }}" alt="">
+                    {% endif %}
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-4">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{path('website_index')}}">Home</a></li>
                     <li><a href="{{ path('website_forum')}}">Forum</a></li>
-                    <li><a href="#">Contact</a></li>
                     <li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <a id="login" class="btn btn-default btn-outline btn-circle collapsed" href="{{ path('fos_user_profile_show') }}"> {{ app.user.username }}</a>

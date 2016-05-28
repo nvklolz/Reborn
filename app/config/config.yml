@@ -86,10 +86,10 @@ fos_user:
     firewall_name: main
     user_class: WebsiteBundle\Entity\User
 twig:
-    form:
-        resources: ['bootstrap_3_layout.html.twig']
-    form_themes:
-        - 'VichUploaderBundle:Form:fields.html.twig'
+#    form:
+#        resources: ['bootstrap_3_layout.html.twig']
+#    form_themes:
+#        - 'VichUploaderBundle:Form:fields.html.twig'
 
 vich_uploader:
     db_driver: orm # or mongodb or propel or phpcr
@@ -110,4 +110,9 @@ services:
        tags:
            - { name: twig.extension }
 
-#92.92.162.201
+kms_froala_editor:
+    language: "fr"
+    toolbarInline: false
+    saveParams: { "id" : "myEditorField" }
+    pluginsEnabled: [ "link", "quote", "font_family", "url" ]
+    pluginsDisabled: [ "line_breaker"]

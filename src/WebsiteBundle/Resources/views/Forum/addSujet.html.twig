@@ -46,7 +46,7 @@
                         <div class="main-content-sujet">
                             <div class="form-group">
                                 {{ form_errors(form.content) }}
-                                {{ form_widget(form.content, { 'attr': {'class': 'form-control'} }) }}
+                                {{ form_widget(form.content) }}
                             </div>
                         </div>
                         <div class="form-group">
@@ -60,4 +60,11 @@
     </div>
     <footer>
     </footer>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset( 'bundles/kmsfroalaeditor/froala_editor_2.1.0/js/froala_editor.min.js' ) }}"></script>
+    <script src="{{ asset( 'bundles/kmsfroalaeditor/froala_editor_2.1.0/js/plugins/quote.min.js' ) }}"></script>
+    <script src="{{ asset( 'bundles/kmsfroalaeditor/froala_editor_2.1.0/js/plugins/url.min.js' ) }}"></script>
+    <script src="{{ asset( 'bundles/kmsfroalaeditor/froala_editor_2.1.0/js/plugins/link.min.js' ) }}"></script>
 {% endblock %}
