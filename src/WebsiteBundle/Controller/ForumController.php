@@ -16,16 +16,12 @@ class ForumController extends Controller
             ->getRepository('WebsiteBundle:HeadTopic')
             ->findAll();
         $nbTopics = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('WebsiteBundle:Topics');
-        $qb = $nbTopics->createQueryBuilder('a');
-        $qb->select('COUNT(a)');
-        $count = $qb->getQuery()->getSingleScalarResult();
-        dump($count);
+            ->getRepository('WebsiteBundle:Topics')
+            ->findAll();
+        dump($nbTopics);
 
         return $this->render('WebsiteBundle:Forum:index.html.twig',
             array('headTopics' => $headtopics,
-                  'countTopics' => $count
             ));
     }
 }
