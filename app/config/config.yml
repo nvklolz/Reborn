@@ -84,6 +84,9 @@ fos_user:
         sender_name: Nvk from Reborn
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
+    profile:
+        form:
+            type: WebsiteBundle\Form\Type\ProfileFormType
     user_class: WebsiteBundle\Entity\User
 twig:
 #    form:
