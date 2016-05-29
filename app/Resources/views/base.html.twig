@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
-    <div class="main">
+<div class="main">
     {% block navbar %}
         <nav class="navbar navbar-inverse">
             <div class="container">
@@ -55,9 +55,8 @@
         </nav>
     {% endblock %}
     {% block body %}
-
+</div>
     {% endblock %}
-    </div>
 {% block javascripts %}
     {% javascripts
     '@WebsiteBundle/Resources/public/js/jquery.min.js'

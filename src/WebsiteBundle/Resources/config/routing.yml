@@ -18,6 +18,10 @@ website_topic_add:
     path:    /forum/{id}/add/sujet
     defaults: { _controller: WebsiteBundle:Addsujet:addsujet }
 
+website_headtopic_add:
+    path: /admin/headtopic/add
+    defaults: { _controller: WebsiteBundle:Addheadtopic:addheadtopic }
+
 website_reply_add:
     path:    /forum/sujet/{id}/add/reply
     defaults: { _controller: WebsiteBundle:Addreply:addreply }
@@ -33,3 +37,7 @@ website_view_topic:
 website_edit_topic:
     path:    /forum/sujet/{id}/edit
     defaults: { _controller: WebsiteBundle:Addsujet:editsujet }
+
+website_admin:
+    path:    /admin
+    defaults: { _controller: WebsiteBundle:Admin:admin }
