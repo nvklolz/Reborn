@@ -4,7 +4,7 @@
      {{ parent() }}
      <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
      <style type="text/css">
-         body {
+         .main {
              background: url('{{ asset('images/homepage/fond.jpg') }}') no-repeat top center #000000;
              color: #798896
          }
@@ -36,7 +36,7 @@
                         <h4>{{ topic.sujetUserLink.username }}</h4>
                         <small>{{ topic.sujetUserLink.rang }}</small>
                         <img src=" {{ image('images/products/'~ topic.sujetUserLink.imageName).forceResize(200,200).jpeg() }}" class="img-circle avatar-sujet" alt="">
-                        <small>joined : {{ topic.sujetUserLink.joinedAt|time_diff }}</small>
+                        <small>Joined : {{ topic.sujetUserLink.joinedAt|time_diff }}</small>
                         <br>
                         <small>Posts: {{ topic.sujetUserLink.nbPosts }}</small>
                     </div>
@@ -59,7 +59,7 @@
                             <h4>{{ replys.replyUserLink.userName }}</h4>
                             <small>{{ replys.replyUserLink.rang }}</small>
                             <img src=" {{ image('images/products/'~ replys.replyUserLink.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
-                            <small>joined : &nbsp;{{ replys.replyUserLink.joinedAt|time_diff  }}</small>
+                            <small>Joined : &nbsp;{{ replys.replyUserLink.joinedAt|time_diff  }}</small>
                             <br>
                             <small>Posts : {{ replys.replyUserLink.nbPosts }}</small>
                         </div>

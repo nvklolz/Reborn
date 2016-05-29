@@ -15,13 +15,13 @@ class AddsujetController extends Controller
         $headTopic = $em->getRepository('WebsiteBundle:HeadTopic')->find($id);
         $user = $this->getUser();
         $count = $user->getnbPosts();
-        $count++;
-        $user->setnbPosts($count);
         $newTopic = new Topics();
         $newTopic->setSujetUserLink($user);
         $newTopic->setHeadTopicLink($headTopic);
         $form = $this->createForm(FormTopic::class, $newTopic);
         if ($form->handleRequest($request)->isValid()) {
+            $count++;
+            $user->setnbPosts($count);
             $em = $this->getDoctrine()->getManager();
             $em->persist($newTopic);
             $em->flush();

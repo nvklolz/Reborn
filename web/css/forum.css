@@ -128,3 +128,6 @@
 .fr-wrapper {
     height:200px;
 }
+.main {
+    min-width: 1200px;
+}

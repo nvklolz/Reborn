@@ -4,7 +4,7 @@
      {{ parent() }}
      <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
      <style type="text/css">
-         body {
+         .main {
              background: url('{{ asset('images/homepage/fond.jpg') }}') no-repeat top center #000000;
              color: #798896
          }
@@ -34,9 +34,11 @@
                 <div class="col-lg-12 border-content-sujet">
                     <div class="col-lg-2 col-left-content-sujet">
                         <h4>{{ app.user.userName }}</h4>
-                        <small>Site Admin</small>
+                        <small>{{ app.user.rang }}</small>
                         <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200).jpeg() }}" class="img-circle avatar-sujet" alt="">
-                        <small>joined : </small>
+                        <small>Joined : {{ app.user.joinedAt|time_diff }} </small>
+                        <br>
+                        <small>Posts : {{ app.user.nbPosts }} </small>
                     </div>
                     <div class="col-lg-10">
                         <div class="head-content-sujet">

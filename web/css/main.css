@@ -10,6 +10,9 @@ header img {
     display: block;
     margin: auto;
 }
+.main {
+    min-width: 1200px;
+}
 .logo-full {
     display: block;
     position: absolute;
