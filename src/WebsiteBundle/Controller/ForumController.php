@@ -18,7 +18,6 @@ class ForumController extends Controller
         $nbTopics = $this->getDoctrine()
             ->getRepository('WebsiteBundle:Topics')
             ->findAll();
-        dump($nbTopics);
 
         return $this->render('WebsiteBundle:Forum:index.html.twig',
             array('headTopics' => $headtopics,
