@@ -35,7 +35,7 @@
                     <div class="col-lg-2 col-left-content-sujet">
                         <h4>{{ app.user.userName }}</h4>
                         <small>Site Admin</small>
-                        <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200) }}" class="img-circle avatar-sujet" alt="">
+                        <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(200,200).jpeg() }}" class="img-circle avatar-sujet" alt="">
                         <small>joined : </small>
                     </div>
                     <div class="col-lg-10">

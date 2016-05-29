@@ -42,6 +42,13 @@ class HeadTopic
     private $topicsLink;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=100)
+     */
+    private $state = 'public';
+
+    /**
      * Get id
      *
      * @return int
@@ -172,5 +179,29 @@ class HeadTopic
     public function getTopicsLink()
     {
         return $this->topicsLink;
+    }
+
+    /**
+     * Set state
+     *
+     * @param string $state
+     *
+     * @return HeadTopic
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 }

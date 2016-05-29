@@ -61,7 +61,7 @@ header img {
     float: right
 }
 .section {
-    width:800px;
+    width:770px;
     height:249px;
     margin:28px 0 1px 25px;
     clear: both;
@@ -156,6 +156,10 @@ header img {
 }
 #discord-widget {
     margin-right:20px;
+}
+.paragraph-homepage {
+    text-align: justify;
+    font-size: 13px;
 }
 
 

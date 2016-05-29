@@ -4,26 +4,6 @@
 <div class="col-lg-12">
     <h1 class="page-header">Mon profil</h1>
 </div>
-<div class="col-lg-8">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <i class="fa fa-clock-o fa-fw"></i> Timeline : Mise à jour.
-        </div>
-        <div class="fos_user_user_show">
-            <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-        </div>
-        <div>
-            <a href="{{ path('fos_user_profile_edit') }}"><p>Editer mon profil</p></a>
-        </div>
-        <div>
-            <a href="{{ path('fos_user_change_password') }}"><p>Modifier mon mot de passe</p></a>
-        </div>
-        <div>
-            <a  class="text-danger" href="{{ path('fos_user_security_logout') }}"><p>Déconnexion</p></a>
-        </div>
-    </div>
-</div>
 <div class="col-lg-4">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -39,10 +19,11 @@
         </div>
         <div class="panel-body rs">
             <h5>Suivez-nous pour garder l'actualité de Reborn !</h5><hr>
-            <a href="https://twitter.com/RebornGuilde"><button type="button" class="btn btn-info btn-circle btn-lg"><i class="fa fa-twitter"></i>
+            <a href="https://twitter.com/RebornGuilde" target="_blank"><button type="button" class="btn btn-info btn-circle btn-lg"><i class="fa fa-twitter"></i>
                 </button></a>
+            <a href="https://www.twitch.tv/rebornguilde" target="_BLANK">
             <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="fa fa-twitch"></i>
-            </button>
+            </button></a>
         </div>
     </div>
 </div>

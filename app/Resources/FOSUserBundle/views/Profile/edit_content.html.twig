@@ -14,7 +14,7 @@
                 <div class="col-lg-6">
                     <div class="panel-body">
                         <h4>Votre image actuelle </h4>
-                        <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(140,140) }}" class="img-circle avatar-sujet" alt="" id="userimg">
+                        <img src=" {{ image('images/products/'~ app.user.imageName).forceResize(140,140).jpeg() }}" class="img-circle avatar-sujet" alt="" id="userimg">
                     </div>
                 </div>
                 <div class="col-lg-6">

@@ -61,6 +61,14 @@ class Topics
      */
     private $headTopicLink;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=100)
+     */
+    private $state = 'normal';
+
+
 
     public function __construct()
     {
@@ -310,5 +318,29 @@ class Topics
     public function getSujetUserLink()
     {
         return $this->sujetUserLink;
+    }
+
+    /**
+     * Set state
+     *
+     * @param string $state
+     *
+     * @return Topics
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 }
