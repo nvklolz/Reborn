@@ -41,7 +41,7 @@
                 <hr>
             </div>
             {% endfor %}
-            {% if app.user.rang == 'Membre' or 'Officier' %}
+            {% if app.user.rang|default('Membre') == 'Officier' %}
             <div class="section-forum">
                 <div class="forum-category">
                     <p>
