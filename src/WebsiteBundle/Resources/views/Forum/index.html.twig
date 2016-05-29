@@ -26,7 +26,7 @@
                     Public
                 </p>
             </div>
-            {% for headTopic in headTopics %}
+            {% for headTopic in headTopics if headTopic.state == 'public' %}
             <div class="row-category">
                 <div class="row-category-title">
                   <a href="{{ path('website_topic', {'id': headTopic.id }) }}"> {{ headTopic.titre }}</a>
@@ -41,7 +41,30 @@
                 <hr>
             </div>
             {% endfor %}
-        </div>
+            {% if app.user.rang == 'Membre' or 'Officier' %}
+            <div class="section-forum">
+                <div class="forum-category">
+                    <p>
+                        Privée
+                    </p>
+                </div>
+                {% for headTopic in headTopics if headTopic.state == 'prive' %}
+                <div class="row-category">
+                    <div class="row-category-title">
+                      <a href="{{ path('website_topic', {'id': headTopic.id }) }}"> {{ headTopic.titre }}</a>
+                        <div><small>{{ headTopic.alttitre }}</small></div>
+                    </div>
+                    <div class="row-category-topics">
+                        <div>
+                            <span>{{ countTopics }}</span><br>
+                            <small>Sujet(s)</small>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
     </div>
     <footer>
     </footer>
