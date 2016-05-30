@@ -1,5 +1,0 @@
-1/ copier le $builder->add de vichupload sur le forum ProfileFormType de FOSUserBundle
-2/ Enlever le form FOSUserProfil
-
-sujet stats = annonce, normal
-headsujet stats = public / privée
