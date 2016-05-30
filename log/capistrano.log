@@ -23703,3 +23703,48 @@ tar: app/AppKernel.php : l'horodatage 2016-05-30 21:37:29 est situé 2118.046036
   INFO [2cddb29e] Running /usr/bin/env echo "Branch master (at b6b0c870d952ef825fff4b57dd06c12aeae40204) deployed as release 20160530210205 by kevin" >> /var/www/reborn/revisions.log as root@51.254.33.102
  DEBUG [2cddb29e] Command: cd /var/www/reborn/releases && /usr/bin/env echo "Branch master (at b6b0c870d952ef825fff4b57dd06c12aeae40204) deployed as release 20160530210205 by kevin" >> /var/www/reborn/revisions.log
   INFO [2cddb29e] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-05-30 23:50:52 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [46ff9114] Running /usr/bin/env mkdir -p /tmp/reborn/ as root@51.254.33.102
+ DEBUG [46ff9114] Command: /usr/bin/env mkdir -p /tmp/reborn/
+  INFO [46ff9114] Finished in 10.943 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/reborn/git-ssh.sh 0.0%
+  INFO Uploading /tmp/reborn/git-ssh.sh 100.0%
+  INFO [c662b644] Running /usr/bin/env chmod +rx /tmp/reborn/git-ssh.sh as root@51.254.33.102
+ DEBUG [c662b644] Command: /usr/bin/env chmod +rx /tmp/reborn/git-ssh.sh
+  INFO [c662b644] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [fefac57b] Running /usr/bin/env git ls-remote --heads git@github.com:nvklolz/Reborn.git as root@51.254.33.102
+ DEBUG [fefac57b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/reborn/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:nvklolz/Reborn.git )
+ DEBUG [fefac57b] 	dad29f2a0e17e0e190c056d09e1e565e7a4d8ac1	refs/heads/develop
+d4ae8e6fbb2f96cadd665d79bfb8bdf376a3be57	refs/heads/master
+  INFO [fefac57b] Finished in 1.463 seconds with exit status 0 (successful).
+  INFO [def8f2c6] Running /usr/bin/env mkdir -p /var/www/reborn/shared /var/www/reborn/releases as root@51.254.33.102
+ DEBUG [def8f2c6] Command: /usr/bin/env mkdir -p /var/www/reborn/shared /var/www/reborn/releases
+  INFO [def8f2c6] Finished in 0.080 seconds with exit status 0 (successful).
+  INFO [ca5fd859] Running /usr/bin/env mkdir -p /var/www/reborn/shared/var/logs as root@51.254.33.102
+ DEBUG [ca5fd859] Command: /usr/bin/env mkdir -p /var/www/reborn/shared/var/logs
+  INFO [ca5fd859] Finished in 0.079 seconds with exit status 0 (successful).
+  INFO [ca9a9e15] Running /usr/bin/env mkdir -p /var/www/reborn/shared/app/config as root@51.254.33.102
+ DEBUG [ca9a9e15] Command: /usr/bin/env mkdir -p /var/www/reborn/shared/app/config
+  INFO [ca9a9e15] Finished in 0.081 seconds with exit status 0 (successful).
+ DEBUG [a73abb18] Running [ -f /var/www/reborn/shared/app/config/parameters.yml ] as root@51.254.33.102
+ DEBUG [a73abb18] Command: [ -f /var/www/reborn/shared/app/config/parameters.yml ]
+ DEBUG [a73abb18] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [3028d675] Running [ -f /var/www/reborn/current/REVISION ] as root@51.254.33.102
+ DEBUG [3028d675] Command: [ -f /var/www/reborn/current/REVISION ]
+ DEBUG [3028d675] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [ec3d07bd] Running /usr/bin/env cat /var/www/reborn/current/REVISION 2>/dev/null as root@51.254.33.102
+ DEBUG [ec3d07bd] Command: /usr/bin/env cat /var/www/reborn/current/REVISION 2>/dev/null
+ DEBUG [ec3d07bd] 	b6b0c870d952ef825fff4b57dd06c12aeae40204
+ DEBUG [ec3d07bd] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [70c9c219] Running [ -f /var/www/reborn/repo/HEAD ] as root@51.254.33.102
+ DEBUG [70c9c219] Command: [ -f /var/www/reborn/repo/HEAD ]
+ DEBUG [70c9c219] Finished in 0.079 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/reborn/repo
+ DEBUG [4ea1a621] Running if test ! -d /var/www/reborn/repo; then echo "Directory does not exist '/var/www/reborn/repo'" 1>&2; false; fi as root@51.254.33.102
+ DEBUG [4ea1a621] Command: if test ! -d /var/www/reborn/repo; then echo "Directory does not exist '/var/www/reborn/repo'" 1>&2; false; fi
+ DEBUG [4ea1a621] Finished in 0.083 seconds with exit status 0 (successful).
+  INFO [9bfd43ac] Running /usr/bin/env git remote update --prune as root@51.254.33.102
+ DEBUG [9bfd43ac] Command: cd /var/www/reborn/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/reborn/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9bfd43ac] 	Fetching origin
