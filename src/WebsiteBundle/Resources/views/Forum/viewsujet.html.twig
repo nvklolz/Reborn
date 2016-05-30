@@ -78,11 +78,13 @@
                     </div>
                 {% endfor %}
             </div>
+            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
             <div class="col-lg-12">
                 <div class="add-new-topic white-link">
                     <a href="{{ path('website_reply_add', {'id' : sujet.id})  }}"><p>+ Répondre</p></a>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
     <footer>
