@@ -20,9 +20,6 @@ class AddreplyController extends Controller
         $topic = $this->getDoctrine()
             ->getRepository('WebsiteBundle:Topics')
             ->find($id);
-        $sujet = $this->getDoctrine()
-            ->getRepository('WebsiteBundle:Topics')
-            ->find($id);
         $reply = $this->getDoctrine()
             ->getRepository('WebsiteBundle:Reply')
             ->findBySujet($id);
@@ -74,9 +71,6 @@ class AddreplyController extends Controller
         $sujet = $this->getDoctrine()
             ->getRepository('WebsiteBundle:Topics')
             ->find($id);
-        $reply = $this->getDoctrine()
-            ->getRepository('WebsiteBundle:Reply')
-            ->findBySujet($id);
 
         $em = $this->getDoctrine()->getManager();
         $reply = $em->getRepository('WebsiteBundle:Reply')->find($idreply);

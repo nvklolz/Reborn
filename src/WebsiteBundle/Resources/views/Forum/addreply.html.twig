@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
-
- {% block stylesheets %}
-     {{ parent() }}
-     <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
-     <style type="text/css">
-         .main {
-             background: url('{{ asset('images/homepage/fond.jpg') }}') no-repeat top center #000000;
-             color: #798896
-         }
-     </style>
- {% endblock %}
+{% block title %} Reborn - Forum {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
+    <style type="text/css">
+     .main {
+         background: url('{{ asset('images/homepage/fond.jpg') }}') no-repeat top center #000000;
+         color: #798896
+     }
+    </style>
+{% endblock %}
 {% block body %}
     <header>
     </header>
