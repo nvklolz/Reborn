@@ -26,11 +26,11 @@
                     </ol>
                 </div>
                 <h4 class="head-titre-add-sujet">{{ sujet.titre }}</h4>
-                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                {% if is_granted("IS_AUTHENTICATED_FULLY") and sujet.state != 'annonce' %}
                 <div class="add-new-topic white-link">
                     <a href="{{ path('website_reply_add', {'id' : sujet.id})  }}"><p>+ Répondre</p></a>
                 </div>
-                 {% endif %}
+                {% endif %}
                 <div class="col-lg-12 border-content-sujet">
                     <div class="col-lg-2 col-left-content-sujet">
                         <h4>{{ topic.sujetUserLink.username }}</h4>
@@ -78,7 +78,7 @@
                     </div>
                 {% endfor %}
             </div>
-            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+            {% if is_granted("IS_AUTHENTICATED_FULLY") and sujet.state != 'annonce' %}
             <div class="col-lg-12">
                 <div class="add-new-topic white-link">
                     <a href="{{ path('website_reply_add', {'id' : sujet.id})  }}"><p>+ Répondre</p></a>
