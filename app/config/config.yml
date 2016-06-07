@@ -98,14 +98,14 @@ vich_uploader:
     db_driver: orm # or mongodb or propel or phpcr
     mappings:
         product_image:
-            uri_prefix:         /images/productsa
+            uri_prefix:         /images/products
             upload_destination: %kernel.root_dir%/../web/images/products
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true
 
 gregwar_image:
-    cache_dir: images/products/cache
+    cache_dir: images/products/
     fallback_image: images/products/no_avatar.jpg
 services:
   twig.extension.text:
